@@ -1,0 +1,110 @@
+<h1>Connection</h1>
+
+<p>This example connection passes the data normally passed along the ROV's spare pair of connections along the comms bus. The RS-485 output from the Micron Echosounder are passed down the Green and Yellow cables of the 9-pin whip, which are then connected to are connected to the Grey and Blue wires going out of the PAM and into the ROV. This frees up the spare pair to use for another accessory, which would otherwise be occupied entirely by the echosounder.</p>
+
+<h2>Connect ROV to PAM</h2>
+
+<p>The first step of the connection is to connect a 9-pin whip to the PAM board. Begin by stripping the black tubing off the end of one of the 9-pin whips. Alcohol can be used to wash the residual glue off individual wires. Strip the tips of the individual wires to be used. The most effective way to create a permanent connection between the 9-pin whip and the PAM board is by soldering. First, melt a small amount of solder into the contact point. A small amount of solder should then be placed on the tip of the wire to be pushed into the contact.  This is commonly called tinning. Heat the wire and push it through the solder in the contact, and then let the solder cool. This creates a strong joint with excellent electrical conductivity. For the ROV side, the following wires should be connected to the PinOUT side of the board:</p>
+
+<p align="center"><img src= "../../pam_echosounder/images/camera_board_echosounder.png" width="400"></p>
+
+<table align = "center">
+ <tr>
+    <th>Pin</th>
+    <th>Color</th>
+    <th>Function</th>
+    </tr>
+  <tr>
+    <td>5</td>
+    <td>Orange</td>
+    <td>Power Common (Ground)</td>
+    </tr>
+  <tr>
+    <td>7</td>
+    <td>Grey</td>
+    <td>RS-485- OR RS-232 RX</td>
+    </tr>
+  <tr>
+    <td>8</td>
+    <td>Blue</td>
+    <td>RS-485+ OR RS-232 TX</td>
+    </tr>
+  <tr>
+    <td>9</td>
+    <td>Brown</td>
+    <td>12V DC + (30 Watts)</td>
+    </tr>
+  </table>
+
+<h2>Connect PAM to Echosounder</h2>
+
+<p>Prepare the second 9-pin whip as above. Connect the individuals wires as shown bellow.</p>
+
+<p align="center"><img src= "../../pam_echosounder/images/echosounder_pam.png" width ="400"></p>
+
+<table align="center">
+  <tr>
+    <th>Pin</th>
+    <th>Color</th>
+    <th>Function</th>
+   </tr>
+  <tr>
+    <td>5</td>
+    <td>Orange</td>
+    <td>Power Common (Ground)</td>
+    </tr>
+  <tr>
+    <td>7</td>
+    <td>Green</td>
+    <td>RS 485 A</td>
+    </tr>
+  <tr>
+    <td>8</td>
+   <td>Yellow</td>
+   <td>RS 485 B</td>
+    </tr>
+  <tr>
+    <td>9</td>
+    <td>Red</td>
+    <td>DC Power</td>
+    </tr>
+  </table>
+
+<p>Power for the Echosounder is transmitted through the red wire into the Echosounder. This wire can be connected to either the 12 V DC or 24 V DC contacts on the PAM board.  Generally, if you want to use a sonar at the same time as the echosounder, you should use the 12 V DC connection for the echosounder.</p>
+
+<p>Once both whips are firmly attached, they can be connected to the ROV and the Echosounder. Plug the whip connected to the PinOut side to the ROV. Plug the whip connected to the PinIN side into the Echosounder 9-pin adapter.</p>
+
+<h2>Echosounder Adapter</h2>
+
+<p>A connector whip that adapts the echosounder's main output to a 9-pin whip connector will be included with your echosounder. How it splits the output may be confusing, so a table and image have been included below to clarify this.  The first column is the connector number in the below picture for the adapter contacts. The second number is the pin, labeled on the head of the 9-pin whip. The third is what is being transmitted on that connection. While this information is not necessary for the example setup, it may be useful if you wish to try an alternative configuration.</p>
+
+<p align="center"><img src= "../../pam_echosounder/images/echosounder_adapter.png"></p>
+
+<table align = "center">
+  <tr>
+    <th>Echosounder Adapter Number</th>
+    <th>9-Pin Head Number</th>
+    <th>Data Type</th>
+    </tr>
+  <tr>
+    <td>3</td>
+    <td>9</td>
+    <td>DC Power(12 V DC)</td>
+    </tr>
+  <tr>
+    <td>1</td>
+    <td>7</td>
+    <td>RS 485 A</td>
+    </tr>
+  <tr>
+    <td>2</td>	
+    <td>8</td>
+    <td>RS 485 B</td>
+    </tr>
+  <tr>
+    <td>4</td>
+    <td>5</td>
+    <td>Ground</td>
+    </tr>
+  </table>
+<p></p>
